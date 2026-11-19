@@ -18,6 +18,8 @@ unidad de observación es ciudad × producto genérico × quincena.
 resultado de los bienes de tienda y para medir la cercanía al estadio y al Fan Fest.
 Ver [Segunda fuente: PROFECO](#segunda-fuente-profeco-quién-es-quién-en-los-precios).
 
+**Cómo encajan las dos bases:** [`docs/datos_y_pregunta.md`](docs/datos_y_pregunta.md) explica qué aporta cada una, qué amenaza al diseño resuelve y qué deja sin responder.
+
 ## Datos
 
 | | |
@@ -137,6 +139,22 @@ Detalle e interpretación en [`docs/robustez.md`](docs/robustez.md).
 - `output/tables/tab_robustez.csv`
 - `output/figures/fig_robustez.png`
 
+## Prueba nacional (`code/08_prueba_nacional.py`)
+
+La diferencia en diferencias no ve un efecto que haya ocurrido en todo el país. Esta prueba lo busca:
+- **INPC:** compara el cambio de precios de mar–may a jun–1Q jul de 2026 contra el de 2018–2025, genérico por genérico, en 275 genéricos.
+- **PROFECO:** compara 2026 contra 2025 en todas las tiendas.
+
+**Resultado:**
+- No hubo alza nacional en los complementarios (bienes comerciables −0.5 pp frente a su temporada normal, p = 0.22).
+- Los licores bajan ~3% en las dos bases. Es un hallazgo exploratorio, posiblemente por promociones.
+
+Detalle en [`docs/prueba_nacional.md`](docs/prueba_nacional.md).
+
+**Salidas:**
+- `output/tables/nacional_*.csv`
+- `output/figures/fig_nacional.png`
+
 ## Segunda fuente: PROFECO, "Quién es Quién en los Precios"
 
 | | |
@@ -149,7 +167,15 @@ Detalle e interpretación en [`docs/robustez.md`](docs/robustez.md).
 **Resultado:** cerveza, refrescos, agua, botanas, licores y pollo rostizado subieron
 +0.19% en las sedes frente al resto del país (IC 95%: −0.44 a +0.75). Los placebos dan
 +0.22%. Tampoco suben más en las tiendas cerca del estadio o del Fan Fest. Confirma que los
-bienes de tienda no se movieron, igual que en el INPC. Detalle en [`docs/profeco.md`](docs/profeco.md).
+bienes de tienda no se movieron, igual que en el INPC.
+
+Las mismas pruebas de robustez que con el INPC (14 variantes) dan lo mismo. El análisis
+exploratorio muestra por qué: dentro de la misma cadena y producto, las sedes no son más
+caras que el resto del país (diferencia mediana 0.0%). La cadena explica 62% de la
+dispersión del precio entre tiendas; la ciudad, 31%.
+
+Detalle en [`docs/profeco.md`](docs/profeco.md) (estimación y robustez) y
+[`docs/profeco_eda.md`](docs/profeco_eda.md) (análisis exploratorio).
 
 **Cómo se descarga.** El servidor de datos abiertos rechaza descargas automáticas, así que los CSV se bajan a mano:
 1. Abran las dos páginas de arriba y den clic en "Descargar" en cada quincena. Son ~200 MB por archivo.
@@ -162,7 +188,9 @@ Esa carpeta no se sube al repositorio. Al repositorio solo suben los productos d
 
 Faltan 7 archivos de 2025 que el servidor cortaba a la mitad; ninguno entra en el diseño principal.
 
-**Salidas** (`code/05_profeco_limpieza.py` y `code/06_profeco_estimacion.py`):
+**Salidas** (`code/05_profeco_limpieza.py`, `code/05b_profeco_eda.py` y `code/06_profeco_estimacion.py`):
+- `output/tables/profeco_eda_*.csv` y `output/figures/eda_profeco_*.png` (análisis exploratorio)
+- `output/figures/fig_profeco_robustez.png`
 - `output/tables/profeco_did_principal.csv`
 - `output/tables/profeco_did_por_grupo.csv`
 - `output/tables/profeco_robustez.csv`
@@ -184,8 +212,10 @@ code/
   03b_eda.py              análisis exploratorio (ver docs/eda.md) → output/
   04_estimacion.py        DiD con efectos fijos, estudio de evento e inferencia → output/
   05_profeco_limpieza.py  filtra los CSV de PROFECO → data/clean/profeco_*
+  05b_profeco_eda.py      análisis exploratorio de PROFECO (ver docs/profeco_eda.md) → output/
   06_profeco_estimacion.py DiD por tienda×producto, robustez y cercanía al estadio → output/
   07_robustez.py          pruebas de robustez de la estimación con el INPC → output/
+  08_prueba_nacional.py   ¿subieron los complementarios en todo el país? (INPC y PROFECO) → output/
 data/
   raw/inpc_ciudad/        catálogo de series y un CSV.gz por ciudad (tal como lo entrega INEGI)
   raw/profeco/            CSV completos de PROFECO (no se suben; ver arriba cómo bajarlos)
@@ -193,7 +223,8 @@ data/
                           y profeco_precios.parquet, profeco_tiendas.csv, profeco_productos.csv
 output/
   figures/  tables/
-docs/                     eda.md (análisis exploratorio), robustez.md, profeco.md (segunda fuente), reporte y notas
+docs/                     datos_y_pregunta.md (cómo encajan las dos bases), eda.md, robustez.md,
+                          profeco_eda.md, profeco.md, prueba_nacional.md, reporte y notas
 ```
 
 ## Cómo replicar
@@ -211,10 +242,12 @@ uv pip install --python .venv/bin/python -r requirements.txt
 .venv/bin/python code/07_robustez.py        # ~1 s; usa la tabla de volatilidad de 03b_eda.py
 # PROFECO: primero bajen los CSV a data/raw/profeco/ (ver arriba)
 .venv/bin/python code/05_profeco_limpieza.py   # ~1 min
-.venv/bin/python code/06_profeco_estimacion.py # ~10 s
+.venv/bin/python code/05b_profeco_eda.py       # ~15 s
+.venv/bin/python code/06_profeco_estimacion.py # ~15 s; usa la tabla de volatilidad de 05b
+.venv/bin/python code/08_prueba_nacional.py    # ~3 s; usa el panel del INPC y el de PROFECO
 ```
 
-`06_profeco_estimacion.py` corre sin los CSV completos, porque usa los archivos filtrados de `data/clean/`.
+`05b` y `06` corren sin los CSV completos, porque usan los archivos filtrados de `data/clean/`.
 
 Para volver a bajar todo desde INEGI (por ejemplo, para agregar quincenas nuevas), usen
 `01_descarga_inpc.py --rehacer`.

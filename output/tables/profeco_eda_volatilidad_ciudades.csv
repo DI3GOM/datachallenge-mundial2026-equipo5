@@ -1,0 +1,33 @@
+ciudad,zona,desv_est_promedio,pares,percentil
+Chihuahua | Chihuahua,Control,2.1,373,3.125
+Tamaulipas | Reynosa,Control,3.662,378,6.25
+Zacatecas | Guadalupe,Control,3.712,309,9.375
+Guerrero | Acapulco de Juárez,Control,4.157,781,12.5
+Michoacan | Morelia,Control,4.573,696,15.625
+Sinaloa | Culiacán,Control,4.592,56,18.75
+Aguascalientes | Aguascalientes,Control,4.606,828,21.875
+Zacatecas | Zacatecas,Control,4.793,693,25.0
+Monterrey,Sede,4.811,986,28.125
+Tamaulipas | Tampico,Control,4.944,600,31.25
+Baja California | Tijuana,Control,5.001,694,34.375
+CDMX,Sede,5.031,14339,37.5
+Oaxaca | Santa Cruz Xoxocotlán,Control,5.061,101,40.625
+Puebla | Puebla,Control,5.103,850,43.75
+Sonora | Hermosillo,Control,5.112,598,46.875
+Durango | Durango,Control,5.194,730,50.0
+Guadalajara,Sede,5.218,1607,53.125
+Chiapas | Tuxtla Gutiérrez,Control,5.258,753,56.25
+Chihuahua | Juárez,Control,5.29,924,59.375
+Campeche | Campeche,Control,5.326,715,62.5
+Quintana Roo | Benito Juárez,Control,5.516,648,65.625
+Tabasco | Centro,Control,5.563,1270,68.75
+San Luis Potosi | San Luis Potosí,Control,5.71,666,71.875
+Tlaxcala | Apizaco,Control,5.75,239,75.0
+Yucatan | Mérida,Control,5.886,786,78.125
+Veracruz | Boca del Río,Control,5.945,328,81.25
+Queretaro | Santiago de Querétaro,Control,6.078,437,84.375
+Quintana Roo | Solidaridad,Control,6.085,410,87.5
+Oaxaca | Oaxaca de Juárez,Control,6.099,629,90.625
+Guanajuato | León,Control,6.111,1522,93.75
+Veracruz | Veracruz,Control,6.664,501,96.875
+Baja California Sur | La Paz,Control,7.205,766,100.0

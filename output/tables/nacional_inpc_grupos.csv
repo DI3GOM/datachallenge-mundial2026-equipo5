@@ -1,0 +1,6 @@
+grupo,genericos,anomalia_promedio_pct,z_promedio,p_vs_genericos_al_azar
+"Bienes comerciables (cerveza, refrescos, botanas, TV, deportivos)",6,-0.5221,-0.6089,0.2214
+"Bienes ampliados (licores, agua, pollo, barbacoa, TV de paga, tenis)",8,-0.7174,-0.452,0.3036
+Servicios (comida fuera de casa y transporte),7,-1.8676,-0.0039,0.9932
+Servicios sin transporte aéreo,6,0.1104,0.2033,0.6739
+Placebo,6,0.1404,0.3177,0.516

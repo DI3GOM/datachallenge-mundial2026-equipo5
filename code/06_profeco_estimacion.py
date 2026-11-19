@@ -66,9 +66,13 @@ def etiqueta_t(t):
 
 
 # --- Datos ----------------------------------------------------------------------------
-def cargar():
+def cargar(incluir_vecinas=False):
+    """Panel con sedes y control. Con incluir_vecinas=True, las ciudades a 40–100 km de un
+    estadio (Toluca, Cuernavaca, Pachuca…) entran como control (prueba de robustez)."""
     p = pd.read_parquet(C.CLEAN / "profeco_precios.parquet")
     t = pd.read_csv(C.CLEAN / "profeco_tiendas.csv")
+    if incluir_vecinas:
+        t["zona"] = t.zona.replace({"Vecina (excluida)": "Control"})
     t = t[t.zona.isin(["Sede", "Control"])].copy()
     t["cerca_estadio"] = t.dist_estadio_km <= CERCA_KM
     t["cerca_fanfest"] = t.dist_fanfest_km <= CERCA_KM
@@ -170,35 +174,70 @@ def did_por_grupo(p):
     return pd.DataFrame(filas)
 
 
+def quitar_tendencia(p, periodo, minimo=6):
+    """Resta a cada par tienda×producto su recta ajustada con las quincenas de `periodo`.
+
+    Equivale a agregar una tendencia lineal propia de cada par a la regresión. Solo se
+    conservan pares con al menos `minimo` quincenas en el periodo.
+    """
+    llave = ["tienda_id", "producto_id"]
+    pre = p[p.t.isin(periodo)].assign(ty=lambda d: d.t * d.y, tt=lambda d: d.t ** 2)
+    s = pre.groupby(llave).agg(n=("y", "size"), st=("t", "sum"), sy=("y", "sum"),
+                               sty=("ty", "sum"), stt=("tt", "sum"))
+    s = s[s.n >= minimo]
+    den = s.n * s.stt - s.st ** 2
+    s["b"] = (s.n * s.sty - s.st * s.sy) / den.where(den > 0)
+    s["a"] = (s.sy - s.b * s.st) / s.n
+    q = p.join(s[["a", "b"]].dropna(), on=llave, how="inner")
+    return q.assign(y=q.y - q.a - q.b * q.t).drop(columns=["a", "b"])
+
+
 def robustez(p):
-    """Pruebas de robustez para 'Bebidas, botanas y comida' y 'Complementarios'."""
+    """Las mismas pruebas que 07_robustez.py hace con el INPC, más algunas propias de PROFECO."""
     t = C.t_quincena
     pre25 = [t(2025, 5, 1), t(2025, 5, 2)]
     dur25 = [t(2025, 6, 1), t(2025, 6, 2), t(2025, 7, 1)]
-    pruebas = [
-        ("Principal: may 2026 → 1Q jun–1Q jul 2026", T_PRE, T_DUR, None),
-        ("Placebo de tendencia: ene–feb 2026 → may 2026", [t(2026, 1, 1), t(2026, 1, 2), t(2026, 2, 2)], T_PRE, None),
-        ("Placebo estacional: may 2025 → 1Q jun–1Q jul 2025", pre25, dur25, None),
-        ("Durante incluye 2Q jul (final)", T_PRE, T_DUR + T_DESP, None),
-        ("Sin frontera norte en el control", T_PRE, T_DUR,
+    mar_may25 = [t(2025, 3, 1), t(2025, 4, 1), t(2025, 4, 2)] + pre25
+    ene_may25 = [t(2025, 1, 1)] + mar_may25
+    pre_larga = sorted(tt for tt in p.t.unique() if tt <= T_REF)          # ene 2025 – may 2026
+    pre_2026 = [t(2026, 1, 1), t(2026, 1, 2), t(2026, 2, 2)] + T_PRE      # ene, feb y may 2026
+    p_tend = quitar_tendencia(p, pre_larga)
+    p_vec = cargar(incluir_vecinas=True)
+    vol = pd.read_csv(C.TAB / "profeco_eda_volatilidad_ciudades.csv")
+    ctrl_vol = vol[vol.zona == "Control"]
+    poco_ruido = set(ctrl_vol.nsmallest(len(ctrl_vol) // 2, "desv_est_promedio").ciudad)
+    pruebas = [  # (nombre, panel, antes, después, filtro)
+        ("Principal: may 2026 → 1Q jun–1Q jul 2026", p, T_PRE, T_DUR, None),
+        ("Base larga: ene 2025–may 2026", p, pre_larga, T_DUR, None),
+        ("Base 2026: ene, feb y may", p, pre_2026, T_DUR, None),
+        ("Durante incluye la 2Q jul (final)", p, T_PRE, T_DUR + T_DESP, None),
+        ("Tendencia lineal por tienda×producto", p_tend, pre_larga, T_DUR, None),
+        ("Control sin frontera norte", p, T_PRE, T_DUR,
          lambda d: ~d.ciudad.str.contains("Tijuana|Juárez|Reynosa|Mexicali", regex=True)),
-        ("Solo supermercados", T_PRE, T_DUR, lambda d: d.giro.str.startswith("Supermercado")),
+        ("Control incluye ciudades vecinas", p_vec, T_PRE, T_DUR, None),
+        ("Control: mitad de ciudades menos ruidosas", p, T_PRE, T_DUR,
+         lambda d: (d.zona == "Sede") | d.ciudad.isin(poco_ruido)),
+        ("Solo supermercados", p, T_PRE, T_DUR, lambda d: d.giro.str.startswith("Supermercado")),
+        ("Placebo de tendencia: ene–feb → may 2026", p, pre_2026[:3], T_PRE, None),
+        ("Placebo: Mundial falso en 2025 (base may)", p, pre25, dur25, None),
+        ("Placebo: Mundial falso en 2025 (base mar–may)", p, mar_may25, dur25, None),
     ]
     filas = []
     for conjunto in ["Bebidas, botanas y comida", "Complementarios", "Placebo"]:
-        for nombre, antes, despues, filtro in pruebas:
+        for nombre, panel, antes, despues, filtro in pruebas:
             filas.append({"conjunto": conjunto, "prueba": nombre,
-                          **did(p, conjunto, antes, despues, filtro)})
-        # Triple diferencia: (may → 1Q jun–1Q jul 2026) − (mismo cambio en 2025), con la
-        # misma inferencia aplicada a la diferencia de efectos por ciudad.
-        th26 = efectos_ciudad(cambios(p, T_PRE, T_DUR).pipe(lambda d: d[CONJUNTOS[conjunto](d)]))
-        th25 = efectos_ciudad(cambios(p, pre25, dur25).pipe(lambda d: d[CONJUNTOS[conjunto](d)]))
-        th = th26[["theta", "zona"]].join(th25[["theta"]].rename(columns={"theta": "theta_25"}), how="inner")
-        th["theta"] = th.theta - th.theta_25
-        th["pares"] = np.minimum(th26.pares.reindex(th.index), th25.pares.reindex(th.index))
-        fila, _ = inferir(th)
-        filas.append({"conjunto": conjunto, "prueba": "Triple diferencia: 2026 menos el mismo cambio en 2025",
-                      **fila})
+                          **did(panel, conjunto, antes, despues, filtro)})
+        # Triple diferencia: cambio de 2026 − el mismo cambio en 2025, con la misma
+        # inferencia aplicada a la diferencia de efectos por ciudad.
+        for nombre, b26, b25 in [("Triple diferencia vs. 2025 (base may)", T_PRE, pre25),
+                                 ("Triple diferencia vs. 2025 (base ene–may)", pre_2026, ene_may25)]:
+            th26 = efectos_ciudad(cambios(p, b26, T_DUR).pipe(lambda d: d[CONJUNTOS[conjunto](d)]))
+            th25 = efectos_ciudad(cambios(p, b25, dur25).pipe(lambda d: d[CONJUNTOS[conjunto](d)]))
+            th = th26[["theta", "zona"]].join(th25[["theta"]].rename(columns={"theta": "theta_25"}), how="inner")
+            th["theta"] = th.theta - th.theta_25
+            th["pares"] = np.minimum(th26.pares.reindex(th.index), th25.pares.reindex(th.index))
+            fila, _ = inferir(th)
+            filas.append({"conjunto": conjunto, "prueba": nombre, **fila})
     return pd.DataFrame(filas)
 
 
@@ -382,6 +421,42 @@ def fig_por_grupo(gr):
     plt.close(fig)
 
 
+def fig_robustez(rob):
+    """Misma figura que fig_robustez.png del INPC (07_robustez.py), con PROFECO."""
+    paneles = {"Bebidas, botanas y comida": "Cerveza, refrescos, agua,\nbotanas, licores y pollo",
+               "Complementarios": "Todos los complementarios\n(incluye pantallas y audio)",
+               "Placebo": "Placebo\n(productos de uso diario)"}
+    pruebas = list(dict.fromkeys(rob.prueba))
+    fig, axes = plt.subplots(1, 3, figsize=(10.5, 6.2), sharey=True, sharex=True)
+    y = np.arange(len(pruebas))[::-1]
+    for ax, conjunto in zip(axes, paneles):
+        d = rob[rob.conjunto == conjunto].set_index("prueba").loc[pruebas]
+        color = GRIS if conjunto == "Placebo" else "#eb6834"
+        ax.axvline(0, color=GRIS, lw=0.8)
+        for yi, (_, r) in zip(y, d.iterrows()):
+            ax.plot([r.ic95_inf, r.ic95_sup], [yi, yi], color=color, lw=1.6, alpha=0.45,
+                    solid_capstyle="round")
+            ax.scatter(r.beta, yi, s=34, color=color, zorder=3, edgecolor="white", linewidth=0.8)
+            ax.text(r.ic95_sup + 0.1, yi, f"p={r.p_permutacion:.2f}", va="center", fontsize=7, color=TEXTO2)
+        ax.axhspan(y[0] - 0.5, y[0] + 0.5, color=FRANJA, lw=0, zorder=0)
+        for i, prueba in enumerate(pruebas[1:], start=1):
+            if prueba.startswith(("Control sin", "Placebo de tendencia", "Triple diferencia vs. 2025 (base may)")):
+                ax.axhline(y[i] + 0.5, color="#c3c2b7", lw=0.6, ls=":")
+        ax.set_title(paneles[conjunto], loc="left", fontsize=9.5, color=TEXTO)
+        estilo(ax)
+        ax.grid(axis="y", visible=False)
+        ax.grid(axis="x", color="#ecebe7", lw=0.8)
+        ax.set_xlabel("β (%, sedes − resto del país)", fontsize=8.5, color=TEXTO2)
+    axes[0].set_yticks(y)
+    axes[0].set_yticklabels(pruebas, fontsize=8.5)
+    fig.suptitle("PROFECO: robustez del efecto durante las quincenas con partidos\n"
+                 "Punto: β; línea: IC 95% por permutación (Conley–Taber); p: permutación",
+                 fontsize=11, color=TEXTO, x=0.01, ha="left")
+    fig.tight_layout()
+    fig.savefig(C.FIG / "fig_profeco_robustez.png", dpi=200)
+    plt.close(fig)
+
+
 def main():
     C.FIG.mkdir(parents=True, exist_ok=True)
     C.TAB.mkdir(parents=True, exist_ok=True)
@@ -423,6 +498,7 @@ def main():
 
     fig_estudio_evento(ev, pre)
     fig_por_grupo(gr)
+    fig_robustez(rob)
 
 
 if __name__ == "__main__":

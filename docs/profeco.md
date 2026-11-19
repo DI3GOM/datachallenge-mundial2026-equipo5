@@ -1,6 +1,6 @@
 # Segunda fuente: precios de PROFECO por tienda y producto
 
-Las cifras y gráficas salen de `code/05_profeco_limpieza.py` y `code/06_profeco_estimacion.py`.
+Las cifras y gráficas salen de `code/05_profeco_limpieza.py` y `code/06_profeco_estimacion.py`. El análisis exploratorio de esta base está en [`profeco_eda.md`](profeco_eda.md).
 
 ## Respuesta corta
 
@@ -78,19 +78,36 @@ Tablas: [`profeco_did_principal.csv`](../output/tables/profeco_did_principal.csv
 
 **Estudio de evento:**
 - No hay tendencias previas: la prueba conjunta da p = 0.45 en bebidas y botanas y p = 0.21 en placebos.
-- En 2025 los precios de las sedes estaban ~0.8% más altos que en mayo 2026, frente al control. Esa diferencia se cierra poco a poco, igual en los placebos, así que es una tendencia común a todos los bienes y no tiene que ver con el Mundial. Coincide con la brecha de largo plazo del INPC. Por eso el diseño principal compara contra mayo 2026, el mes previo.
+- En 2025 los precios de las sedes estaban ~0.8% más altos que en mayo 2026, frente al control. La diferencia cae casi toda en enero 2026, igual en los placebos, así que es un cambio común a todos los bienes y no tiene que ver con el Mundial (ver `profeco_eda.md`, sección 7). Por eso el diseño principal compara contra mayo 2026, el mes previo.
 
-| Prueba (bebidas, botanas y comida) | β (%) | p |
-|---|---|---|
-| Principal | 0.19 | 0.54 |
-| Placebo de tendencia: ene–feb → may 2026 | −0.24 | 0.69 |
-| Placebo estacional: may → 1Q jun–1Q jul 2025 | 0.00 | 1.00 |
-| Triple diferencia: 2026 menos el mismo cambio en 2025 | 0.19 | 0.76 |
-| "Durante" incluye la 2Q jul (final) | 0.23 | 0.43 |
-| Sin ciudades de la frontera norte en el control | 0.26 | 0.36 |
-| Solo supermercados | 0.17 | 0.65 |
+![Robustez](../output/figures/fig_profeco_robustez.png)
 
-Tabla completa: [`profeco_robustez.csv`](../output/tables/profeco_robustez.csv).
+Son las mismas pruebas que `07_robustez.py` hace con el INPC (ver `robustez.md`), más dos propias de PROFECO: incluir las ciudades vecinas y usar solo supermercados.
+
+| Prueba (bebidas, botanas y comida) | β (%) | IC 95% | p |
+|---|---|---|---|
+| **Principal: may → 1Q jun–1Q jul 2026** | **0.19** | −0.44 a 0.75 | 0.54 |
+| Base larga: ene 2025–may 2026 | −0.45 | −2.62 a 1.42 | 0.37 |
+| Base 2026: ene, feb y may | 0.02 | −0.85 a 1.37 | 0.97 |
+| "Durante" incluye la 2Q jul (final) | 0.23 | −0.37 a 0.74 | 0.43 |
+| Tendencia lineal por tienda×producto | −1.67 | −4.45 a −0.02 | 0.14 |
+| Control sin frontera norte | 0.26 | −0.35 a 0.75 | 0.36 |
+| Control incluye ciudades vecinas | 0.20 | −0.68 a 0.81 | 0.61 |
+| Control: mitad de ciudades menos ruidosas | 0.20 | −0.33 a 0.90 | 0.58 |
+| Solo supermercados | 0.17 | −0.61 a 0.84 | 0.65 |
+| Placebo de tendencia: ene–feb → may 2026 | −0.24 | −1.26 a 1.35 | 0.69 |
+| Placebo: Mundial falso en 2025 (base may) | 0.00 | −0.84 a 1.21 | 1.00 |
+| Placebo: Mundial falso en 2025 (base mar–may) | 0.18 | −0.50 a 1.15 | 0.57 |
+| Triple diferencia vs. 2025 (base may) | 0.19 | −1.27 a 1.20 | 0.76 |
+| Triple diferencia vs. 2025 (base ene–may) | −0.18 | −1.29 a 1.73 | 0.77 |
+
+- **Ninguna prueba da un alza significativa.**
+- **La base larga y la tendencia lineal dan negativo.** Las dos comparan contra 2025 y arrastran el escalón de enero 2026.
+  - La tendencia lineal además lo proyecta hacia adelante. Por eso su IC apenas toca el cero, aunque la permutación da p = 0.14.
+  - Los placebos se mueven en la misma dirección (−0.21 y −0.56). Eso confirma que es algo común a todos los bienes de las sedes y no un efecto del Mundial.
+- **En el INPC la tendencia lineal no tiene ese problema.** Se ajusta a índices de ciudad, que se mueven de forma más suave que el precio de un producto en una tienda.
+
+Tabla completa (también complementarios y placebo): [`profeco_robustez.csv`](../output/tables/profeco_robustez.csv).
 
 **Heterogeneidad por cercanía:**
 - **Pregunta:** dentro de cada sede, ¿subieron más los precios en las tiendas a menos de 5 km del estadio o del Fan Fest, donde se concentran los aficionados?

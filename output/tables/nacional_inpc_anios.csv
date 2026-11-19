@@ -1,0 +1,41 @@
+anio,grupo,anomalia_promedio_pct,z_promedio,lugar_abs_z
+2018,"Bienes comerciables (cerveza, refrescos, botanas, TV, deportivos)",-0.088,-0.1517,8.0
+2018,"Bienes ampliados (licores, agua, pollo, barbacoa, TV de paga, tenis)",0.4046,0.548,2.0
+2018,Servicios (comida fuera de casa y transporte),0.4823,-0.8891,1.0
+2018,Servicios sin transporte aéreo,-0.3763,-1.1155,1.0
+2018,Placebo,0.0974,0.3321,3.0
+2019,"Bienes comerciables (cerveza, refrescos, botanas, TV, deportivos)",-0.1943,-0.6669,3.0
+2019,"Bienes ampliados (licores, agua, pollo, barbacoa, TV de paga, tenis)",0.0583,-0.5057,3.0
+2019,Servicios (comida fuera de casa y transporte),2.5664,0.4524,3.0
+2019,Servicios sin transporte aéreo,0.1416,0.251,6.0
+2019,Placebo,0.0288,0.1075,7.0
+2021,"Bienes comerciables (cerveza, refrescos, botanas, TV, deportivos)",0.698,0.5094,6.0
+2021,"Bienes ampliados (licores, agua, pollo, barbacoa, TV de paga, tenis)",-0.3372,-0.6206,1.0
+2021,Servicios (comida fuera de casa y transporte),2.557,-0.0563,7.0
+2021,Servicios sin transporte aéreo,-0.2933,-0.4063,4.0
+2021,Placebo,0.1536,0.3989,1.0
+2022,"Bienes comerciables (cerveza, refrescos, botanas, TV, deportivos)",-0.1231,1.2908,1.0
+2022,"Bienes ampliados (licores, agua, pollo, barbacoa, TV de paga, tenis)",0.0897,-0.1157,7.0
+2022,Servicios (comida fuera de casa y transporte),-1.6342,0.3144,4.0
+2022,Servicios sin transporte aéreo,0.1303,0.5475,3.0
+2022,Placebo,0.2115,0.0166,8.0
+2023,"Bienes comerciables (cerveza, refrescos, botanas, TV, deportivos)",0.467,1.1367,2.0
+2023,"Bienes ampliados (licores, agua, pollo, barbacoa, TV de paga, tenis)",0.3468,0.3794,5.0
+2023,Servicios (comida fuera de casa y transporte),-0.406,0.081,6.0
+2023,Servicios sin transporte aéreo,-0.0338,0.1306,8.0
+2023,Placebo,0.1346,0.2101,5.0
+2024,"Bienes comerciables (cerveza, refrescos, botanas, TV, deportivos)",0.0082,-0.1981,7.0
+2024,"Bienes ampliados (licores, agua, pollo, barbacoa, TV de paga, tenis)",0.2664,0.3149,6.0
+2024,Servicios (comida fuera de casa y transporte),-1.0361,0.5874,2.0
+2024,Servicios sin transporte aéreo,0.3991,0.8236,2.0
+2024,Placebo,-0.5465,-0.361,2.0
+2025,"Bienes comerciables (cerveza, refrescos, botanas, TV, deportivos)",-0.2603,-0.6376,4.0
+2025,"Bienes ampliados (licores, agua, pollo, barbacoa, TV de paga, tenis)",-0.1113,0.0307,8.0
+2025,Servicios (comida fuera de casa y transporte),-0.6617,-0.3062,5.0
+2025,Servicios sin transporte aéreo,-0.0779,-0.2999,5.0
+2025,Placebo,-0.2199,-0.1479,6.0
+2026,"Bienes comerciables (cerveza, refrescos, botanas, TV, deportivos)",-0.5221,-0.6089,5.0
+2026,"Bienes ampliados (licores, agua, pollo, barbacoa, TV de paga, tenis)",-0.7174,-0.452,4.0
+2026,Servicios (comida fuera de casa y transporte),-1.8676,-0.0039,8.0
+2026,Servicios sin transporte aéreo,0.1104,0.2033,7.0
+2026,Placebo,0.1404,0.3177,4.0

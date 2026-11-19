@@ -1,0 +1,21 @@
+medida,conjunto,valor
+Celdas cadena×producto×quincena con tiendas en 2+ ciudades,Complementarios,9797.0
+% de esas celdas con el mismo precio en todas las tiendas (±1%),Complementarios,20.6
+Celdas cadena×producto×quincena con tiendas en 2+ ciudades,Placebo,14159.0
+% de esas celdas con el mismo precio en todas las tiendas (±1%),Placebo,20.17
+% de la varianza del precio entre tiendas que explica la cadena,Complementarios,61.53
+% de la varianza del precio entre tiendas que explica la ciudad,Complementarios,30.66
+% de la varianza del precio entre tiendas que explica la cadena,Placebo,59.42
+% de la varianza del precio entre tiendas que explica la ciudad,Placebo,19.97
+Diferencia mediana entre la tienda más cara y la más barata de la cadena (%),Complementarios,10.31
+Diferencia mediana entre la tienda más cara y la más barata de la cadena (%),Placebo,10.32
+Celdas con tiendas de la misma cadena en sedes y en control,Complementarios,7792.0
+"Prima de las sedes: precio sede − control, misma cadena y producto (%, media)",Complementarios,0.16
+"Prima de las sedes (%, mediana)",Complementarios,0.0
+% de celdas donde sede y control difieren menos de 1%,Complementarios,35.07
+% de celdas donde sede y control difieren menos de 5%,Complementarios,71.8
+Celdas con tiendas de la misma cadena en sedes y en control,Placebo,11782.0
+"Prima de las sedes: precio sede − control, misma cadena y producto (%, media)",Placebo,0.33
+"Prima de las sedes (%, mediana)",Placebo,0.0
+% de celdas donde sede y control difieren menos de 1%,Placebo,37.49
+% de celdas donde sede y control difieren menos de 5%,Placebo,74.81

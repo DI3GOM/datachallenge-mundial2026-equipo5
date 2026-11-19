@@ -54,7 +54,7 @@ Para que eso funcione, los datos tienen que permitir comprobar cinco cosas:
 
 **PROFECO: confirma, con más precisión, que los bienes no se movieron.**
 - Cerveza, refrescos, agua, botanas, licores y pollo rostizado: **+0.19%** (IC −0.44 a +0.75). El intervalo descarta alzas de más de ~0.8%.
-- Las tiendas a menos de 5 km del estadio o del Fan Fest tampoco suben más (−0.38%, p = 0.50).
+- Las tiendas a menos de 5 km del estadio o del Fan Fest tampoco suben más (−0.37%, p = 0.50).
 - Ninguna de las 14 variantes de robustez da un alza significativa.
 
 **PROFECO explica el porqué:**

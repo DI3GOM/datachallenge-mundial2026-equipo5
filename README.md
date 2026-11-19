@@ -216,6 +216,7 @@ code/
   06_profeco_estimacion.py DiD por tienda×producto, robustez y cercanía al estadio → output/
   07_robustez.py          pruebas de robustez de la estimación con el INPC → output/
   08_prueba_nacional.py   ¿subieron los complementarios en todo el país? (INPC y PROFECO) → output/
+  09_figuras_reporte.py   figura compacta y tablas del reporte en LaTeX (rep_*.tex) → output/
 data/
   raw/inpc_ciudad/        catálogo de series y un CSV.gz por ciudad (tal como lo entrega INEGI)
   raw/profeco/            CSV completos de PROFECO (no se suben; ver arriba cómo bajarlos)
@@ -224,7 +225,8 @@ data/
 output/
   figures/  tables/
 docs/                     datos_y_pregunta.md (cómo encajan las dos bases), eda.md, robustez.md,
-                          profeco_eda.md, profeco.md, prueba_nacional.md, reporte y notas
+                          profeco_eda.md, profeco.md, prueba_nacional.md
+  reporte/                reporte.tex y reporte.pdf (el reporte de 5 páginas)
 ```
 
 ## Cómo replicar
@@ -245,6 +247,17 @@ uv pip install --python .venv/bin/python -r requirements.txt
 .venv/bin/python code/05b_profeco_eda.py       # ~15 s
 .venv/bin/python code/06_profeco_estimacion.py # ~15 s; usa la tabla de volatilidad de 05b
 .venv/bin/python code/08_prueba_nacional.py    # ~3 s; usa el panel del INPC y el de PROFECO
+.venv/bin/python code/09_figuras_reporte.py    # figura y tablas del reporte (después de 04–07)
+```
+
+Las dos tablas del reporte (`output/tables/rep_tabla1_resultados.tex` y
+`rep_tabla2_heterogeneidad.tex`) las escribe `09_figuras_reporte.py` a partir de los CSV de
+resultados, y `reporte.tex` las incluye con `\input`; no se editan a mano. El reporte se compila
+con [Tectonic](https://tectonic-typesetting.github.io/) (o cualquier distribución de LaTeX con
+XeLaTeX):
+
+```bash
+cd docs/reporte && tectonic -X compile reporte.tex
 ```
 
 `05b` y `06` corren sin los CSV completos, porque usan los archivos filtrados de `data/clean/`.
@@ -262,7 +275,9 @@ Para volver a bajar todo desde INEGI (por ejemplo, para agregar quincenas nuevas
 - [ ] Ponderadores del INPC 2024, para traducir el efecto a gasto de los hogares.
 - [ ] Decidir si se agregan genéricos complementarios que ya están descargados (tequila, otros licores, agua embotellada, pollos rostizados, televisión de paga).
 - [x] Robustez (`docs/robustez.md`): placebo en 2025, bases cortas, triple diferencia, sin vecinas ni frontera, tendencias lineales, final dentro de "durante" y control con ciudades menos ruidosas.
-- [ ] Reporte (máx. 5 páginas) e invitación al repositorio para `aguilares26` y `juanmaldonado1902`.
+- [x] Borrador del reporte (`docs/reporte/reporte.pdf`, 5 páginas).
+- [ ] Completar en el reporte lo marcado en rojo: liga del repositorio, revisión del equipo y contribución de cada miembro.
+- [ ] Crear el repositorio en GitHub e invitar a `aguilares26` y `juanmaldonado1902`.
 
 ## Uso de IA
 

@@ -59,7 +59,7 @@ Las cifras y gráficas salen de `code/05_profeco_limpieza.py` y `code/06_profeco
 | Bebidas, botanas y comida | 0.19 | −0.44 a 0.75 | 0.54 | 0.41 | −0.02 | 0.19 |
 | Todos los complementarios | 0.19 | −0.45 a 0.77 | 0.53 | 0.39 | −0.33 | 0.51 |
 | Pantallas y audio | 0.50 | −1.97 a 2.58 | 0.70 | 0.05 | −3.02 | 4.46 |
-| Placebo | 0.22 | −0.35 a 0.83 | 0.39 | 0.15 | −0.10 | 0.62 |
+| Placebo | 0.22 | −0.34 a 0.83 | 0.39 | 0.15 | −0.10 | 0.62 |
 
 Tablas: [`profeco_did_principal.csv`](../output/tables/profeco_did_principal.csv) y [`profeco_did_por_grupo.csv`](../output/tables/profeco_did_por_grupo.csv).
 
@@ -112,7 +112,7 @@ Tabla completa (también complementarios y placebo): [`profeco_robustez.csv`](..
 **Heterogeneidad por cercanía:**
 - **Pregunta:** dentro de cada sede, ¿subieron más los precios en las tiendas a menos de 5 km del estadio o del Fan Fest, donde se concentran los aficionados?
 - **Respuesta: no.**
-  - Bebidas y botanas: cerca menos lejos = −0.38% (p = 0.50).
+  - Bebidas y botanas: cerca menos lejos = −0.37% (p = 0.50).
   - Solo cerca del Fan Fest, todos los complementarios: +0.75% (p = 0.18).
   - Placebos: −0.36% (p = 0.25).
 - **Cómo se calcula el p-valor:** se reasigna al azar la etiqueta "cerca" entre tiendas de la misma sede (4,999 permutaciones).

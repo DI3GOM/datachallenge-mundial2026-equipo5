@@ -276,8 +276,8 @@ Para volver a bajar todo desde INEGI (por ejemplo, para agregar quincenas nuevas
 - [ ] Decidir si se agregan genéricos complementarios que ya están descargados (tequila, otros licores, agua embotellada, pollos rostizados, televisión de paga).
 - [x] Robustez (`docs/robustez.md`): placebo en 2025, bases cortas, triple diferencia, sin vecinas ni frontera, tendencias lineales, final dentro de "durante" y control con ciudades menos ruidosas.
 - [x] Borrador del reporte (`docs/reporte/reporte.pdf`, 5 páginas).
-- [ ] Completar en el reporte lo marcado en rojo: liga del repositorio, revisión del equipo y contribución de cada miembro.
-- [ ] Crear el repositorio en GitHub e invitar a `aguilares26` y `juanmaldonado1902`.
+- [ ] Completar en el reporte lo marcado en rojo: revisión del equipo y contribución de cada miembro.
+- [x] Repositorio en GitHub (privado) con invitaciones a `aguilares26` y `juanmaldonado1902`.
 
 ## Uso de IA
 

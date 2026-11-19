@@ -1,0 +1,56 @@
+ciudad,desv_est_promedio,sede,percentil
+Area Metropolitana de la Cd. de México,1.866,CDMX,1.818
+"Chihuahua, Chih.",1.872,,3.636
+"Matamoros, Tamps.",1.914,,5.455
+"Puebla, Pue.",1.938,,7.273
+"Tampico, Tamps.",1.996,,9.091
+"Monterrey, N.L.",2.215,Monterrey,10.909
+"Coatzacoalcos, Ver.",2.221,,12.727
+"Torreón, Coah.",2.248,,14.545
+"Veracruz,Ver.",2.261,,16.364
+"Tepic, Nay.",2.261,,18.182
+"Acapulco, Gro.",2.307,,20.0
+"Guadalajara, Jal.",2.332,Guadalajara,21.818
+"Campeche, Camp.",2.375,,23.636
+"Tlaxcala, Tlax.",2.402,,25.455
+"Cd. Acuña, Coah.",2.428,,27.273
+"Izúcar de Matamoros, Pue.",2.447,,29.091
+"Colima, Col.",2.447,,30.909
+"Durango, Dgo.",2.481,,32.727
+"Aguascalientes, Ags.",2.486,,34.545
+"Pachuca, Hgo.",2.517,,36.364
+"Mérida, Yuc.",2.523,,38.182
+"Mexicali, B.C.",2.551,,40.0
+"Villahermosa, Tab.",2.558,,41.818
+"Iguala, Gro.",2.579,,43.636
+"Tulancingo, Hgo.",2.625,,45.455
+"Tepatitlán, Jal.",2.649,,47.273
+"Cd. Juárez, Chih.",2.656,,49.091
+"Morelia, Mich.",2.694,,50.909
+"Tuxtla Gutiérrez, Chis.",2.729,,52.727
+"Saltillo, Coah.",2.77,,54.545
+"San Luis Potosí, S.L.P.",2.806,,56.364
+"Cuernavaca, Mor.",2.809,,58.182
+"León, Gto.",2.827,,60.0
+"Hermosillo, Son.",2.869,,61.818
+"Esperanza, Son.",2.935,,63.636
+"Tapachula, Chis.",2.936,,65.455
+"Tehuantepec, Oax.",2.947,,67.273
+"Monclova, Coah.",2.976,,69.091
+"Oaxaca, Oax.",2.984,,70.909
+"Huatabampo, Son.",2.993,,72.727
+"Zacatecas, Zac.",3.037,,74.545
+"Cd. Jiménez, Chih.",3.071,,76.364
+"Querétaro, Qro.",3.088,,78.182
+"Córdoba, Ver.",3.112,,80.0
+"Atlacomulco, Méx.",3.188,,81.818
+"Cancún, Q. Roo.",3.21,,83.636
+"Culiacán, Sin.",3.213,,85.455
+"San Andrés Tuxtla, Ver.",3.332,,87.273
+"Toluca, Edo. de Méx.",3.365,,89.091
+"La Paz, B.C.S.",3.385,,90.909
+"Fresnillo, Zac.",3.408,,92.727
+"Chetumal, Q.R.",3.412,,94.545
+"Cortazar, Gto.",3.765,,96.364
+"Tijuana, B.C.",3.808,,98.182
+"Jacona, Mich.",3.833,,100.0

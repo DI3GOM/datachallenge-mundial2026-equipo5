@@ -1,0 +1,41 @@
+coeficiente,beta,ee_cluster,p_cluster,p_wild_bootstrap,p_permutacion,ic95_inf,ic95_sup,n_obs,generico,generico_cod,grupo,tipo
+beta_durante,0.0707,1.073,0.9477,,0.9532,-2.226,2.5461,2420,Cerveza,108,Bebidas y botanas empacadas,Bienes comerciables
+gamma_despues,-0.0139,1.2329,0.991,,0.9904,-2.5384,2.704,2420,Cerveza,108,Bebidas y botanas empacadas,Bienes comerciables
+beta_durante,0.0231,0.5426,0.9662,,0.9868,-2.3961,2.5573,2420,Refrescos envasados,100,Bebidas y botanas empacadas,Bienes comerciables
+gamma_despues,0.0943,0.3609,0.7948,,0.9349,-2.2633,2.4349,2420,Refrescos envasados,100,Bebidas y botanas empacadas,Bienes comerciables
+beta_durante,-2.0365,0.9873,0.044,,0.2481,-5.3394,1.4501,2420,Papas fritas,074,Bebidas y botanas empacadas,Bienes comerciables
+gamma_despues,-1.2782,0.6054,0.0394,,0.4369,-4.3764,2.1011,2420,Papas fritas,074,Bebidas y botanas empacadas,Bienes comerciables
+beta_durante,-0.4734,0.8655,0.5867,,0.8106,-4.4636,3.518,2420,Botanas de cereales,002,Bebidas y botanas empacadas,Bienes comerciables
+gamma_despues,-0.3157,0.9864,0.7502,,0.8786,-4.8096,3.5563,2420,Botanas de cereales,002,Bebidas y botanas empacadas,Bienes comerciables
+beta_durante,-0.3551,0.2868,0.221,,0.735,-2.4889,1.6918,2420,"Loncherías, fondas y taquerías",265,Comida y bebida fuera de casa,Servicios
+gamma_despues,0.5775,0.2621,0.0319,,0.5973,-1.5717,2.7544,2420,"Loncherías, fondas y taquerías",265,Comida y bebida fuera de casa,Servicios
+beta_durante,-0.4121,0.2424,0.0948,,0.6088,-2.1575,1.1653,2420,Restaurantes,268,Comida y bebida fuera de casa,Servicios
+gamma_despues,0.0925,0.2787,0.7412,,0.9063,-1.5213,1.631,2420,Restaurantes,268,Comida y bebida fuera de casa,Servicios
+beta_durante,0.6737,0.6668,0.3169,,0.676,-3.2144,4.4468,2420,Pizzas,266,Comida y bebida fuera de casa,Servicios
+gamma_despues,0.3718,0.94,0.694,,0.8373,-3.9771,5.3351,2420,Pizzas,266,Comida y bebida fuera de casa,Servicios
+beta_durante,1.9079,0.9164,0.0421,,0.2376,-2.7814,4.9459,2420,Servicios recreativos y centros nocturnos,246,Comida y bebida fuera de casa,Servicios
+gamma_despues,2.2071,1.1291,0.0558,,0.2079,-3.326,5.5071,2420,Servicios recreativos y centros nocturnos,246,Comida y bebida fuera de casa,Servicios
+beta_durante,-0.6482,1.9511,0.741,,0.8058,-5.8442,4.2923,2420,Taxi,225,Transporte,Servicios
+gamma_despues,-1.408,2.0711,0.4995,,0.638,-7.7532,3.4912,2420,Taxi,225,Transporte,Servicios
+beta_durante,3.9491,1.7563,0.0287,,0.1084,-1.5259,8.0868,2420,Estacionamiento,219,Transporte,Servicios
+gamma_despues,4.7596,1.4368,0.0017,,0.0723,-0.9458,9.35,2420,Estacionamiento,219,Transporte,Servicios
+beta_durante,2.5509,0.6735,0.0004,,0.1885,-0.6943,7.6705,2420,Autobús foráneo,222,Transporte,Servicios
+gamma_despues,0.9689,1.2572,0.4443,,0.6614,-2.9111,6.3383,2420,Autobús foráneo,222,Transporte,Servicios
+beta_durante,6.7665,2.3571,0.0058,,0.3557,-7.1816,21.1612,2420,Transporte aéreo,227,Transporte,Servicios
+gamma_despues,3.4513,3.7672,0.3637,,0.6294,-10.0476,18.5357,2420,Transporte aéreo,227,Transporte,Servicios
+beta_durante,-0.2007,3.9208,0.9594,,0.97,-9.8707,12.0476,2420,Televisores,231,Equipo para ver o jugar,Bienes comerciables
+gamma_despues,-2.1398,3.3106,0.5208,,0.6983,-12.543,8.8509,2420,Televisores,231,Equipo para ver o jugar,Bienes comerciables
+beta_durante,-0.7806,1.3734,0.5721,,0.6626,-5.4365,4.7063,2420,Artículos deportivos,241,Equipo para ver o jugar,Bienes comerciables
+gamma_despues,-0.3101,1.6222,0.8491,,0.8967,-5.6248,5.6712,2420,Artículos deportivos,241,Equipo para ver o jugar,Bienes comerciables
+beta_durante,0.5255,1.6065,0.7448,,0.6637,-1.9193,2.625,2420,Tortilla de maíz,014,Placebo,Placebo
+gamma_despues,1.507,1.7627,0.3964,,0.2509,-1.1007,3.6757,2420,Tortilla de maíz,014,Placebo,Placebo
+beta_durante,0.2247,0.9976,0.8226,,0.9108,-3.9463,4.5725,2420,Detergentes,176,Placebo,Placebo
+gamma_despues,-2.1547,1.5791,0.1781,,0.367,-6.4661,2.7375,2420,Detergentes,176,Placebo,Placebo
+beta_durante,-2.7402,1.5625,0.0852,,0.2618,-7.3343,2.1888,2420,Analgésicos,184,Placebo,Placebo
+gamma_despues,-2.6452,2.861,0.3593,,0.3194,-7.6834,2.1958,2420,Analgésicos,184,Placebo,Placebo
+beta_durante,2.6578,1.2334,0.0356,,0.2837,-3.4081,7.5478,2420,Pañales,280,Placebo,Placebo
+gamma_despues,0.9513,1.8279,0.6049,,0.7058,-4.6307,5.5327,2420,Pañales,280,Placebo,Placebo
+beta_durante,0.7538,1.0115,0.4593,,0.5958,-2.4064,3.2788,2420,Consulta médica,199,Placebo,Placebo
+gamma_despues,0.7573,0.7453,0.3141,,0.634,-2.6718,3.7362,2420,Consulta médica,199,Placebo,Placebo
+beta_durante,-0.8377,1.0131,0.412,,0.6664,-5.341,3.362,2420,Mantenimiento de automóvil,216,Placebo,Placebo
+gamma_despues,-1.2391,1.3394,0.359,,0.5724,-5.8382,3.3551,2420,Mantenimiento de automóvil,216,Placebo,Placebo

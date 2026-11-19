@@ -1,0 +1,9 @@
+conjunto,periodo,beta,p_permutacion,ic95_inf,ic95_sup,ciudades_control,pares_sedes,pares_control,beta_CDMX,p_CDMX,beta_Guadalajara,p_Guadalajara,beta_Monterrey,p_Monterrey
+Complementarios,Durante (1Q jun–1Q jul),0.1911,0.53,-0.4477,0.7736,29,13877,14559,0.3919,0.5333,-0.3308,0.7333,0.5122,0.2667
+Complementarios,Después (2Q jul),0.2115,0.5327,-0.7454,0.728,29,10117,11457,0.1064,0.8667,0.0399,0.9667,0.4883,0.3667
+"Bebidas, botanas y comida",Durante (1Q jun–1Q jul),0.1909,0.5439,-0.4394,0.753,29,13120,13178,0.4086,0.5,-0.0224,0.9667,0.1866,0.8
+"Bebidas, botanas y comida",Después (2Q jul),0.3138,0.3442,-0.6522,0.8186,29,9690,10477,0.1705,0.7,0.4164,0.5,0.3545,0.5
+Pantallas y audio,Durante (1Q jun–1Q jul),0.4965,0.702,-1.9694,2.5802,20,704,1381,0.0495,1.0,-3.0166,0.2381,4.4567,0.0952
+Pantallas y audio,Después (2Q jul),-1.1414,0.4367,-3.8562,1.2115,16,427,980,-1.6089,0.4118,-4.0367,0.1765,2.2212,0.3529
+Placebo,Durante (1Q jun–1Q jul),0.2242,0.3888,-0.3446,0.8316,29,21343,21075,0.1466,0.7667,-0.0956,0.8333,0.6216,0.2
+Placebo,Después (2Q jul),0.0157,0.9644,-0.8966,0.6196,29,17204,19294,0.2023,0.8667,-0.385,0.5667,0.2297,0.8333

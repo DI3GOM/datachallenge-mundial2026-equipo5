@@ -1,0 +1,56 @@
+prueba,grupo,beta,p_permutacion,ic95_inf,ic95_sup,ciudades,tripletas_fisher
+Principal: ene 2025–may 2026 → 1Q jun–1Q jul 2026,Servicios,1.8041,0.097,-0.3475,3.832,55,26235
+Principal: ene 2025–may 2026 → 1Q jun–1Q jul 2026,Servicios sin transporte aéreo,1.0952,0.0613,-0.101,2.1341,55,26235
+Principal: ene 2025–may 2026 → 1Q jun–1Q jul 2026,Bienes comerciables,-0.5662,0.6675,-2.7807,2.2461,55,26235
+Principal: ene 2025–may 2026 → 1Q jun–1Q jul 2026,Complementarios,0.7882,0.3238,-0.6646,2.5211,55,26235
+Principal: ene 2025–may 2026 → 1Q jun–1Q jul 2026,Placebo,0.0973,0.9156,-1.8075,1.7905,55,26235
+Base corta: mar–may 2026,Servicios,0.8159,0.2699,-0.6973,2.2822,55,26235
+Base corta: mar–may 2026,Servicios sin transporte aéreo,0.2449,0.5575,-0.7566,0.9303,55,26235
+Base corta: mar–may 2026,Bienes comerciables,-0.0694,0.9283,-1.4935,1.452,55,26235
+Base corta: mar–may 2026,Complementarios,0.4365,0.3997,-0.6209,1.3897,55,26235
+Base corta: mar–may 2026,Placebo,0.2859,0.693,-1.3571,1.86,55,26235
+Base de un mes: mayo 2026,Servicios,0.5832,0.4084,-0.7101,2.0034,55,26235
+Base de un mes: mayo 2026,Servicios sin transporte aéreo,-0.2295,0.4601,-0.9783,0.3378,55,26235
+Base de un mes: mayo 2026,Bienes comerciables,0.4123,0.5445,-1.0623,1.6729,55,26235
+Base de un mes: mayo 2026,Complementarios,0.51,0.3103,-0.4761,1.4798,55,26235
+Base de un mes: mayo 2026,Placebo,0.0264,0.9703,-1.2311,1.4085,55,26235
+Durante incluye la 2Q jul (final),Servicios,1.624,0.1084,-0.3432,3.5478,55,26235
+Durante incluye la 2Q jul (final),Servicios sin transporte aéreo,1.0483,0.0746,-0.1393,2.1005,55,26235
+Durante incluye la 2Q jul (final),Bienes comerciables,-0.5239,0.6902,-2.785,2.3157,55,26235
+Durante incluye la 2Q jul (final),Complementarios,0.7034,0.3577,-0.669,2.3695,55,26235
+Durante incluye la 2Q jul (final),Placebo,-0.0952,0.9066,-1.922,1.5447,55,26235
+Tendencia lineal por ciudad×genérico,Servicios,1.8501,0.0514,0.0756,3.7393,55,26235
+Tendencia lineal por ciudad×genérico,Servicios sin transporte aéreo,0.638,0.2092,-0.5803,1.5711,55,26235
+Tendencia lineal por ciudad×genérico,Bienes comerciables,0.2015,0.8374,-1.4047,2.1641,55,26235
+Tendencia lineal por ciudad×genérico,Complementarios,1.1435,0.0587,-0.0166,2.3162,55,26235
+Tendencia lineal por ciudad×genérico,Placebo,0.3061,0.7193,-1.3127,2.0918,55,26235
+Control sin vecinas ni frontera norte,Servicios,1.8339,0.1181,-0.5321,4.0016,43,12341
+Control sin vecinas ni frontera norte,Servicios sin transporte aéreo,1.0608,0.0717,-0.1625,2.089,43,12341
+Control sin vecinas ni frontera norte,Bienes comerciables,-0.4906,0.7163,-2.7526,2.4022,43,12341
+Control sin vecinas ni frontera norte,Complementarios,0.8377,0.3239,-0.7283,2.6488,43,12341
+Control sin vecinas ni frontera norte,Placebo,0.0636,0.9476,-1.9244,1.7967,43,12341
+Control: 26 ciudades con series menos ruidosas,Servicios,1.6553,0.1623,-0.7343,3.8312,29,3654
+Control: 26 ciudades con series menos ruidosas,Servicios sin transporte aéreo,1.3138,0.0419,-0.0645,2.3447,29,3654
+Control: 26 ciudades con series menos ruidosas,Bienes comerciables,-1.4749,0.1256,-3.1825,0.2859,29,3654
+Control: 26 ciudades con series menos ruidosas,Complementarios,0.3138,0.6546,-1.0538,1.7055,29,3654
+Control: 26 ciudades con series menos ruidosas,Placebo,0.1958,0.8191,-1.9376,1.8925,29,3654
+Placebo: Mundial falso en 2025 (base larga),Servicios,-1.8665,0.0884,-4.1183,0.1405,55,26235
+Placebo: Mundial falso en 2025 (base larga),Servicios sin transporte aéreo,-0.5046,0.4819,-2.0551,0.9232,55,26235
+Placebo: Mundial falso en 2025 (base larga),Bienes comerciables,0.1008,0.9012,-1.5943,1.7752,55,26235
+Placebo: Mundial falso en 2025 (base larga),Complementarios,-1.0234,0.1782,-2.5105,0.4417,55,26235
+Placebo: Mundial falso en 2025 (base larga),Placebo,-0.8228,0.33,-2.5085,0.7247,55,26235
+Placebo: Mundial falso en 2025 (base mar–may),Servicios,-0.8418,0.2215,-2.2367,0.4523,55,26235
+Placebo: Mundial falso en 2025 (base mar–may),Servicios sin transporte aéreo,0.1337,0.7618,-0.7925,0.8997,55,26235
+Placebo: Mundial falso en 2025 (base mar–may),Bienes comerciables,0.4908,0.3957,-0.7649,1.4963,55,26235
+Placebo: Mundial falso en 2025 (base mar–may),Complementarios,-0.2707,0.5613,-1.2114,0.6223,55,26235
+Placebo: Mundial falso en 2025 (base mar–may),Placebo,-1.0508,0.1025,-2.3084,0.2377,55,26235
+Triple diferencia vs. 2020–2025 (base larga),Servicios,2.7842,0.0348,0.19,5.2593,55,26235
+Triple diferencia vs. 2020–2025 (base larga),Servicios sin transporte aéreo,1.4885,0.0484,-0.0853,2.8265,55,26235
+Triple diferencia vs. 2020–2025 (base larga),Bienes comerciables,-0.4323,0.741,-2.797,2.3564,55,26235
+Triple diferencia vs. 2020–2025 (base larga),Complementarios,1.4057,0.1232,-0.3237,3.3066,55,26235
+Triple diferencia vs. 2020–2025 (base larga),Placebo,0.1115,0.9,-1.8139,1.8705,55,26235
+Triple diferencia vs. 2019–2025 (base mar–may),Servicios,1.4214,0.1245,-0.5639,3.1803,55,26235
+Triple diferencia vs. 2019–2025 (base mar–may),Servicios sin transporte aéreo,0.4524,0.301,-0.6475,1.1895,55,26235
+Triple diferencia vs. 2019–2025 (base mar–may),Bienes comerciables,0.0565,0.9386,-1.3303,1.5679,55,26235
+Triple diferencia vs. 2019–2025 (base mar–may),Complementarios,0.8364,0.154,-0.4218,1.9555,55,26235
+Triple diferencia vs. 2019–2025 (base mar–may),Placebo,0.6016,0.4635,-1.1221,2.3049,55,26235

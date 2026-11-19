@@ -1,0 +1,21 @@
+generico_cod,tipo,generico,cambio_medio,desv_est,pct_sin_cambio,pct_cambio_mayor_10,cambio_maximo,desv_est_sedes,desv_est_no_sedes
+002,Bienes comerciables,Botanas de cereales,0.246,1.504,52.479,0.083,16.271,0.796,1.19
+014,Placebo,Tortilla de maíz,0.122,0.458,72.521,0.0,5.859,0.502,0.387
+074,Bienes comerciables,Papas fritas,0.256,1.682,41.405,0.207,16.736,0.916,1.311
+100,Bienes comerciables,Refrescos envasados,0.325,1.136,54.298,0.041,10.062,0.743,0.992
+108,Bienes comerciables,Cerveza,0.117,1.443,19.091,0.083,11.062,0.761,1.3
+176,Placebo,Detergentes,0.182,3.841,34.05,3.099,26.701,2.389,3.491
+184,Placebo,Analgésicos,0.264,3.371,33.099,1.86,52.449,2.051,2.622
+199,Placebo,Consulta médica,0.203,0.788,84.587,0.0,7.4,0.721,0.679
+216,Placebo,Mantenimiento de automóvil,0.243,1.289,75.62,0.289,18.578,0.943,0.907
+219,Servicios,Estacionamiento,0.256,1.369,94.174,0.372,23.105,1.403,1.111
+222,Servicios,Autobús foráneo,0.206,1.429,42.645,0.083,12.533,1.965,1.097
+225,Servicios,Taxi,0.172,3.145,66.942,2.81,24.276,3.579,1.635
+227,Servicios,Transporte aéreo,0.415,18.403,0.0,50.455,92.569,13.345,17.948
+231,Bienes comerciables,Televisores,-0.113,5.043,17.851,6.116,33.873,2.706,4.722
+241,Bienes comerciables,Artículos deportivos,0.059,2.467,58.802,1.116,22.96,1.894,1.885
+246,Servicios,Servicios recreativos y centros nocturnos,0.209,1.116,75.826,0.124,12.36,0.371,0.785
+265,Servicios,"Loncherías, fondas y taquerías",0.315,0.728,68.802,0.0,9.85,0.38,0.625
+266,Servicios,Pizzas,0.154,1.663,58.388,0.331,17.532,0.666,1.043
+268,Servicios,Restaurantes,0.246,0.528,48.223,0.0,5.883,0.356,0.494
+280,Placebo,Pañales,0.149,3.709,25.289,2.314,41.362,3.868,3.06

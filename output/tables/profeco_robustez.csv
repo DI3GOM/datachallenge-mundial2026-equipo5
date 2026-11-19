@@ -1,0 +1,22 @@
+conjunto,prueba,beta,p_permutacion,ic95_inf,ic95_sup,ciudades_control,pares_sedes,pares_control,beta_CDMX,p_CDMX,beta_Guadalajara,p_Guadalajara,beta_Monterrey,p_Monterrey
+"Bebidas, botanas y comida",Principal: may 2026 → 1Q jun–1Q jul 2026,0.1909,0.5439,-0.4394,0.753,29,13120,13178,0.4086,0.5,-0.0224,0.9667,0.1866,0.8
+"Bebidas, botanas y comida",Placebo de tendencia: ene–feb 2026 → may 2026,-0.2436,0.689,-1.2636,1.3469,26,12099,10490,-0.7995,0.3704,-0.3295,0.7778,0.3982,0.7407
+"Bebidas, botanas y comida",Placebo estacional: may 2025 → 1Q jun–1Q jul 2025,0.0,0.9997,-0.8415,1.2059,27,10611,9527,-0.2223,0.75,0.2786,0.6786,-0.0561,0.9286
+"Bebidas, botanas y comida",Durante incluye 2Q jul (final),0.2292,0.4257,-0.3742,0.7424,29,13305,13303,0.3641,0.4333,0.1073,0.8,0.2162,0.8
+"Bebidas, botanas y comida",Sin frontera norte en el control,0.2617,0.3629,-0.3464,0.754,23,13110,10087,0.4604,0.4167,0.0521,0.9583,0.2726,0.6667
+"Bebidas, botanas y comida",Solo supermercados,0.1707,0.6471,-0.6104,0.8371,29,12677,11417,0.3085,0.7,-0.0724,0.9667,0.2759,0.7333
+"Bebidas, botanas y comida",Triple diferencia: 2026 menos el mismo cambio en 2025,0.1909,0.7591,-1.2669,1.2037,27,10611,9303,0.631,0.5357,-0.301,0.7857,0.2427,0.8214
+Complementarios,Principal: may 2026 → 1Q jun–1Q jul 2026,0.1911,0.53,-0.4477,0.7736,29,13877,14559,0.3919,0.5333,-0.3308,0.7333,0.5122,0.2667
+Complementarios,Placebo de tendencia: ene–feb 2026 → may 2026,-0.2968,0.6078,-1.2436,1.2851,26,12530,11252,-0.7916,0.4444,-0.0176,1.0,-0.0813,0.963
+Complementarios,Placebo estacional: may 2025 → 1Q jun–1Q jul 2025,0.0624,0.8978,-0.6449,1.2642,27,11655,11150,-0.1736,0.7143,-0.0694,0.9286,0.4302,0.6429
+Complementarios,Durante incluye 2Q jul (final),0.2009,0.4807,-0.4204,0.7124,29,14088,14714,0.3245,0.6,-0.1962,0.7,0.4746,0.3
+Complementarios,Sin frontera norte en el control,0.2431,0.4046,-0.4051,0.7333,23,13865,11136,0.4411,0.375,-0.2796,0.8333,0.5679,0.2083
+Complementarios,Solo supermercados,0.2006,0.5855,-0.6034,0.8675,29,13038,11665,0.2494,0.8667,-0.1758,0.9333,0.5283,0.4
+Complementarios,Triple diferencia: 2026 menos el mismo cambio en 2025,0.1287,0.8059,-1.2647,0.9607,27,11655,10846,0.5655,0.5357,-0.2615,0.7143,0.082,1.0
+Placebo,Principal: may 2026 → 1Q jun–1Q jul 2026,0.2242,0.3888,-0.3446,0.8316,29,21343,21075,0.1466,0.7667,-0.0956,0.8333,0.6216,0.2
+Placebo,Placebo de tendencia: ene–feb 2026 → may 2026,-0.5089,0.3381,-1.2753,0.8026,28,19900,18145,-0.592,0.6207,-0.3857,0.6552,-0.5492,0.6207
+Placebo,Placebo estacional: may 2025 → 1Q jun–1Q jul 2025,-0.3899,0.2554,-1.0017,0.3089,28,21391,20312,-0.3579,0.5862,-0.439,0.4828,-0.3727,0.5862
+Placebo,Durante incluye 2Q jul (final),0.1963,0.4566,-0.4234,0.7645,29,21605,21291,0.1722,0.6667,-0.1831,0.6333,0.5997,0.1667
+Placebo,Sin frontera norte en el control,0.2771,0.3584,-0.3861,0.8864,23,21338,16139,0.1992,0.7917,-0.0496,0.9167,0.6818,0.2083
+Placebo,Solo supermercados,0.231,0.409,-0.346,0.9337,29,20962,18788,0.113,0.8667,-0.0659,0.9,0.646,0.1667
+Placebo,Triple diferencia: 2026 menos el mismo cambio en 2025,0.6141,0.2005,-0.3617,1.5399,28,20846,19087,0.5045,0.5517,0.3435,0.6552,0.9943,0.2414

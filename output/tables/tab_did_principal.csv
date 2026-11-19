@@ -1,0 +1,15 @@
+especificacion,coeficiente,beta,ee_cluster,p_cluster,p_wild_bootstrap,p_permutacion,ic95_inf,ic95_sup,n_obs
+Complementarios,Durante el Mundial (β),0.7882,0.705,0.2685,0.4643,0.3238,-0.6646,2.5211,33880
+Complementarios,Después del Mundial (γ),0.5041,0.574,0.3837,0.4805,0.5401,-1.0869,2.2671,33880
+Servicios,Durante el Mundial (β),1.8041,0.736,0.0175,0.1448,0.097,-0.3475,3.832,19360
+Servicios,Después del Mundial (γ),1.3776,0.9775,0.1645,0.3535,0.2475,-0.8314,3.7706,19360
+Bienes comerciables,Durante el Mundial (β),-0.5662,1.047,0.5908,0.6437,0.6675,-2.7807,2.2461,14520
+Bienes comerciables,Después del Mundial (γ),-0.6606,0.7244,0.3659,0.5266,0.61,-3.0333,2.1624,14520
+Placebo,Durante el Mundial (β),0.0973,0.4374,0.8247,0.8355,0.9156,-1.8075,1.7905,14520
+Placebo,Después del Mundial (γ),-0.4706,0.668,0.4842,0.498,0.6048,-2.3551,1.2522,14520
+Solo CDMX,Durante el Mundial (β),-0.5194,0.1904,0.0086,,0.6604,-2.6651,2.0587,33880
+Solo CDMX,Después del Mundial (γ),-0.7296,0.1993,0.0006,,0.6038,-3.0457,2.3269,33880
+Solo Guadalajara,Durante el Mundial (β),2.2885,0.1904,0.0,,0.1321,0.1428,4.8666,33880
+Solo Guadalajara,Después del Mundial (γ),1.4603,0.1993,0.0,,0.3019,-0.8558,4.5168,33880
+Solo Monterrey,Durante el Mundial (β),0.5956,0.1904,0.0028,,0.6038,-1.5502,3.1736,33880
+Solo Monterrey,Después del Mundial (γ),0.7816,0.1993,0.0003,,0.566,-1.5345,3.8382,33880

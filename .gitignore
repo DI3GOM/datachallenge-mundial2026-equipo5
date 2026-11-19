@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+.ipynb_checkpoints/
+# Tokens o credenciales (por ejemplo, el token de la API de INEGI) nunca se suben
+.env
+*.token
+
+# Archivos completos de PROFECO (Quién es Quién en los Precios): ~200 MB cada uno.
+# Se descargan con las instrucciones del README; al repositorio solo sube la versión filtrada.
+data/raw/profeco/
